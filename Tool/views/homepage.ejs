@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="g-html-fit g-border-color-black">
+	<head>
+		
+		<!-- Title of the page if it is provided -->
+		
+		<title>
+			<% if (locals.title) { %>
+				<%= title %>
+			<% } %>
+		</title>
+	
+		<!-- Add css object here -->
+		
+		<style>
+			<% if (locals.css) { %>
+				<%= css %>
+			<% } %>
+		</style>
+
+	</head>
+	<body class="g-height100 g-width100 g-fblight g-text-white g-consalas">
+	
+		<div class="g-height10 g-width100 g-red g-border-color-white">
+			<div class="g-height100 g-width100 g-red g-border-color-black">
+				<div class="g-height100 g-width20 g-blue g-centered-text g-FL">				
+					<% if (locals.title) { %>
+						<%= title %>
+					<% } %>
+				</div>
+				<div class="g-height100 g-width60 g-green g-FL">
+					<form class="g-height100 g-width100" action="search" method="get">
+						<input class="g-height100 g-width70 g-FL" type="text" name="keyword" placeholder=" Search..." required/>
+						<input class="g-height100 g-width30" type="submit" placeholder="Submit"/>
+					</form>
+
+				</div>
+				<div class="g-height100 g-width20 g-gray g-FL">
+					<button id="toggle2" class="g-height100 g-width50 g-red g-FR"  onclick="changeDisplay("Options")">
+						OPTIONS
+					</button>
+				</div>	
+			</div>
+		</div>
+		<div class="g-height90 g-width100 g-border-color-blue">
+			</br>
+			Hey Joey
+		</div>
+		
+		<div id="content" class="g-options g-green g-border-color-red">
+			<button id="toggle" class="g-height10 g-width10 g-red g-centered-text g-FR" onclick="changeDisplay("Options")">
+				X
+			</button>
+			OPTIONS GO HERE
+	</body>
+
+	<script>
+		var toggle  = document.getElementById("toggle");
+		var toggle2  = document.getElementById("toggle2");
+		var content = document.getElementById("content");
+
+		toggle.addEventListener("click", function() {
+			content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+		});
+		toggle2.addEventListener("click", function() {
+			content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
+		});
+	</script>	
+</html>
