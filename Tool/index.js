@@ -25,7 +25,7 @@ var css_global =  fs.readFileSync('./assets/css/global.css', 'utf8');
 
 //   This is the port that the application will run on
 //
-const port = 80;
+const port = 3000;
 
 /*  /   Sets the application to use the view folder, and enable EJS (Embedded JavaScript)
  * /    
