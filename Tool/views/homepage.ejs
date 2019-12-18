@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html class="g-html-fit g-border-color-black">
+<html class="g-html-fit">
 	<head>
 		
 		<!-- Title of the page if it is provided -->
+		<meta charset="utf-8" />
 		
 		<title>
 			<% if (locals.title) { %>
@@ -11,40 +12,45 @@
 		</title>
 	
 		<!-- Add css object here -->
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.js"></script>
+		<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.css" rel="stylesheet" />
 		
 		<style>
 			<% if (locals.css) { %>
 				<%= css %>
 			<% } %>
+			
+			body { margin: 0; padding: 0; }
+			#map {  };
 		</style>
 
 	</head>
-	<body class="g-height100 g-width100 g-fblight g-text-white g-consalas">
+	<body class="g-height100 g-width100 g-text-white g-roboto">
 	
-		<div class="g-height10 g-width100 g-red g-border-color-white">
-			<div class="g-height100 g-width100 g-red g-border-color-black">
-				<div class="g-height100 g-width20 g-blue g-centered-text g-FL">				
-					<% if (locals.title) { %>
-						<%= title %>
-					<% } %>
+		<div class="g-height15 g-width100 g-buffmap-gray">
+			<div class="g-height100 g-width100">
+				<div class="g-height100 g-width25 g-centered-text g-FL">				
+					<img class="g-ImageFit" src="./images/BuffMap-logo.png" alt="Logo">
 				</div>
-				<div class="g-height100 g-width60 g-green g-FL">
-					<form class="g-height100 g-width100" action="search" method="get">
-						<input class="g-height100 g-width70 g-FL" type="text" name="keyword" placeholder=" Search..." required/>
-						<input class="g-height100 g-width30" type="submit" placeholder="Submit"/>
+				<div class="g-height100 g-width50 g-FL">
+					<div class="g-height20">
+					</div>
+					<form class="g-height60 g-width100 g-border-color-black" action="search" method="get">
+						<input class="g-height100 g-width100 g-FL" type="text" name="keyword" placeholder=" Search for Client or Prospect..." required/>
 					</form>
-
+					<div class="g-height20">
+					</div>
 				</div>
-				<div class="g-height100 g-width20 g-gray g-FL">
-					<button id="toggle2" class="g-height100 g-width50 g-red g-FR"  onclick="changeDisplay("Options")">
-						OPTIONS
+				<div class="g-height100 g-width25 g-FL">
+					<button id="toggle2" class="g-height100 g-width25 g-buffmap-gray g-FR g-no-border" onclick="changeDisplay("Options")">
+						<img class="g-FlexFit" src="./images/options.png" alt="Logo">						
 					</button>
 				</div>	
 			</div>
 		</div>
-		<div class="g-height90 g-width100 g-border-color-blue">
-			</br>
-			Hey Joey
+		<div class="g-height85 g-width100 g-white">	
+			<div class="g-height100 g-width100" id="map"></div>
 		</div>
 		
 		<div id="content" class="g-options g-green g-border-color-red">
@@ -52,6 +58,7 @@
 				X
 			</button>
 			OPTIONS GO HERE
+		</div>
 	</body>
 
 	<script>
@@ -65,5 +72,15 @@
 		toggle2.addEventListener("click", function() {
 			content.style.display = (content.dataset.toggled ^= 1) ? "block" : "none";
 		});
-	</script>	
+		
+		mapboxgl.accessToken = 'pk.eyJ1Ijoib250YXJnbyIsImEiOiJjazFiY3g2cnMwaTB2M25ua3Q3YzFyMmlsIn0.XPi5Qe0M85AThiQLGHNJmg';
+		var map = new mapboxgl.Map({
+			container: 'map', // container id
+			style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+			center: [-74.5, 40], // starting position [lng, lat]
+			zoom: 5 // starting zoom
+		});
+
+	</script>
+
 </html>

@@ -74,6 +74,12 @@ a:hover, a:active {
 .g-orange{
     background-color: orange;
 }
+.g-brandon-red {
+	background-color: #A92323;
+}
+.g-buffmap-gray {
+	background-color: #B4B4B4;
+}
 .g-purple{
     background-color: purple;
 }
@@ -130,6 +136,16 @@ a:hover, a:active {
 .g-ImageFit {
     width: 100%;  /*width of parent container*/
     height: 100%; /*height of parent container*/
+    object-fit: contain;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.g-LogoFit {
+    width: 100%;  /*width of parent container*/
+    height: 100%; /*height of parent container*/
+	max-height: 100%;
     object-fit: contain;
     position: relative;
     top: 50%;
@@ -363,6 +379,10 @@ a:hover, a:active {
 
 .g-consalas {
     font-family: Consolas,monaco,monospace;
+}
+
+.g-roboto {
+    font-family: Roboto;
 }
 
 .g-centered-text {
