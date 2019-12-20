@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Tool",
+    "\\Tool\\api",
+    "\\Tool\\api\\logins",
+    "\\Tool\\assets",
+    "\\Tool\\assets\\css",
+    "\\Tool\\views"
+  ],
+  "SelectedNode": "\\Tool\\api\\logins\\hubspot_login.js",
+  "PreviewInSolutionExplorer": false
+}

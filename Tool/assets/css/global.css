@@ -117,7 +117,13 @@ a:hover, a:active {
 .g-fblight {
     background-color: #4e71ba;
 }
+.g-hubspot {
+    background-color: #e66e50;
+}
 
+.g-salesforce {
+    background-color: #1798C1;
+}
 
 /* Use with I frames to make a div work well */
 .g-FlexFit {
@@ -543,3 +549,4 @@ a:hover, a:active {
   height: 90%;
   z-index: 1;
 }
+

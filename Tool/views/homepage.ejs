@@ -26,12 +26,12 @@
 		</style>
 
 	</head>
-	<body class="g-height100 g-width100 g-text-white g-roboto">
+	<body class="g-height100 g-width100 g-text-black g-roboto">
 	
 		<div class="g-height15 g-width100 g-buffmap-gray">
 			<div class="g-height100 g-width100">
 				<div class="g-height100 g-width25 g-centered-text g-FL">				
-					<img class="g-ImageFit" src="./images/BuffMap-logo.png" alt="Logo">
+					<img class="g-ImageFit" src="/images/BuffMap-logo.png" alt="Logo">
 				</div>
 				<div class="g-height100 g-width50 g-FL">
 					<div class="g-height20">
@@ -44,15 +44,53 @@
 				</div>
 				<div class="g-height100 g-width25 g-FL">
 					<button id="toggle2" class="g-height100 g-width25 g-buffmap-gray g-FR g-no-border" onclick="changeDisplay("Options")">
-						<img class="g-FlexFit" src="./images/options.png" alt="Logo">						
+						<img class="g-FlexFit" src="/images/Options_Cog.svg" alt="Logo">						
 					</button>
 				</div>	
 			</div>
 		</div>
-		<div class="g-height85 g-width100 g-white">	
-			<div class="g-height100 g-width100" id="map"></div>
+
+		<div class="g-height80 g-width20 g-FL">
+			<div class="g-height20 g-width100 g-FL">
+				Temp Print of CRM response:
+			</div>
+			<div class="g-height80 g-width100 g-FL g-babyblue">
+				<!-- Add a Printout of "GetContacts" from the example hubspot gives -->
+				<% if ( locals.contacts ) { %>
+					<% if ( contacts == "1" ) { %>
+						Function 1 ran
+					<% } else if ( contacts == "Worked" ) { %>
+						Worked
+					<% } else if ( contacts == "Error" ) { %>
+						Error
+					<% } %>
+				<% } else { %>
+					Nothing Yet
+				<% } %>
+			</div>
 		</div>
-		
+		<div class="g-height80 g-width80 g-white g-FR">	
+			<!-- <div class="g-height100 g-width100" id="map"></div> -->
+			Map is commented out rn
+		</div>
+
+		<div class="g-height5 g-width100 g-FL">
+			<% if ( locals.crm ) { %>
+				<% if ( crm =="HubSpot" ) { %>
+					<div class="g-FlexFit g-hubspot">
+					</div>
+				<% } else if ( crm =="SalesForce" ) { %>
+					<div class="g-FlexFit g-salesforce">
+					</div>
+				<% } else { %>
+					<div class="g-FlexFit g-buffmap-gray">
+					</div>
+				<% } %>%>
+			<% } else { %>
+				<div class="g-FlexFit g-buffmap-gray">
+				</div>
+			<% } %>
+		</div>
 		<div id="content" class="g-options g-green g-border-color-red">
 			<button id="toggle" class="g-height10 g-width10 g-red g-centered-text g-FR" onclick="changeDisplay("Options")">
 				X

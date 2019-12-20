@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="g-html-fit">
+	<head>
+		
+		<!-- Title of the page if it is provided -->
+		<meta charset="utf-8" />
+		
+		<title>
+			<% if (locals.title) { %>
+				<%= title %>
+			<% } %>
+		</title>
+	
+		<!-- Add css object here -->
+		<style>
+			<% if (locals.css) { %>
+				<%= css %>
+			<% } %>
+		</style>
+
+	</head>
+  
+	<body class="g-height100 g-width100 g-text-white g-roboto">
+
+		<div class="g-height100 g-width33- g-FL">
+
+		</div>
+		<div class="g-height100 g-width33- g-FL">
+
+			<div class="g-height50 g-width100">
+				<div class="g-height33- g-width100">
+				</div>
+				<div class="g-height33- g-width100">
+					<form action="/login/HubSpot" method="post" class="g-FlexFit">
+						<button type="submit" class="g-FlexFit g-hubspot g-responsive-text-3">Login With Hub Spot</button>
+					</form>
+					<!-- <a href="/login/HubSpot"><h3>Login With Hub Spot</h3></a> -->
+				</div>
+				<div class="g-height33- g-width100">
+				</div>
+
+			</div>
+	
+			<div class="g-height50 g-width100">
+				
+				<div class="g-height33- g-width100">
+				</div>
+				<div class="g-height33- g-width100">
+					<form action="/login/SalesForce" method="post" class="g-FlexFit">
+						<button type="submit" class="g-FlexFit g-salesforce g-responsive-text-3">Login With Sales Force</button>
+					</form>
+					<!-- <a href="/login/SalesForce"><h3>Login With Sales Force</h3></a> -->
+				</div>
+				<div class="g-height33- g-width100">
+				</div>
+			</div>
+
+		</div>
+		<div class="g-height100 g-width33- g-FL">
+
+		</div>
+
+
+	</body>
+
+	<script>
+
+	</script>
+
+</html>
