@@ -57,21 +57,26 @@
 			<div class="g-height80 g-width100 g-FL g-babyblue">
 				<!-- Add a Printout of "GetContacts" from the example hubspot gives -->
 				<% if ( locals.contacts ) { %>
-					<% if ( contacts == "1" ) { %>
-						Function 1 ran
-					<% } else if ( contacts == "Worked" ) { %>
-						Worked
-					<% } else if ( contacts == "Error" ) { %>
-						Error
+					TEST VID:
+					<% for(var i=0; i < contacts.length; i++) { %>
+						<%= contacts[i].vid %></br>
 					<% } %>
 				<% } else { %>
 					Nothing Yet
 				<% } %>
+				<% if ( locals.addresses ) { %>
+					Addresses:</br>
+					<!-- <%= addresses %> -->
+					<% for(var i=0; i < addresses.length; i++) { %>
+						<%= contacts[i].properties.firstname.value %>: <%= addresses[i] %></br>
+					<% } %>
+				<% } %>
+
 			</div>
 		</div>
 		<div class="g-height80 g-width80 g-white g-FR">	
-			<!-- <div class="g-height100 g-width100" id="map"></div> -->
-			Map is commented out rn
+			<div class="g-height100 g-width100" id="map"></div>
+			<!-- Map is commented out rn -->
 		</div>
 
 		<div class="g-height5 g-width100 g-FL">
