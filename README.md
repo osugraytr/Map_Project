@@ -17,3 +17,7 @@ Look at TODO.td
     4. Command line: 
     
         npm run dev
+        
+    5. Open browser: 
+    
+        localhost:3000
