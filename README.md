@@ -6,7 +6,7 @@ Look at TODO.td
 
     1. Clone repo: 
     
-        ```bash
+        ```console
         git clone -b dev-<Name of Branch> https://github.com/osugraytr/Map_Project
         ```
         
@@ -14,12 +14,12 @@ Look at TODO.td
  
     3. Command line: 
         
-        ```bash
+        ```console
         npm install
         ```
         
     4. Command line: 
     
-        ```bash
+        ```console
         npm run dev
         ```
